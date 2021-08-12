@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			table {
+				border-collapse: collapse;
+				margin: auto;
+			}
+			
+			#board td {
+				border: 5px solid black;
+			}
+			
+			td div {
+				height: 100px;
+				width: 100px;
+			}
+			
+			td {
+				text-align: center;
+			}
+			
+			h1 {
+				text-align: center;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<table style="width:100%">
+			<tr>
+				<td>
+					Game Mode:<br>
+					<input type="radio" name="mode" id="single">Single player</input><br>
+					<input type="radio" name="mode" id="multi" checked>Multiplayer</input>
+				</td>
+				<td>
+					Difficulty (for single player):<br>
+					<input type="radio" name="diff" id="easy" checked>Easy</input><br>
+					<input type="radio" name="diff" id="hard">Hard</input>
+				</td>
+				<td>
+					Starting Player (for single player):<br>
+					<input type="radio" name="start" id="playr" checked>Player</input><br>
+					<input type="radio" name="start" id="comp">Computer</input>
+				</td>
+				<td>
+					Symbol for Player (for single player):<br>
+					<input type="radio" name="sym" id="crosses" checked>Cross</input><br>
+					<input type="radio" name="sym" id="naughts">Circle</input>
+				</td>
+			</tr>
+		</table><br><br>
+
+		<div style="width:100%;display:flex;justify-content:center"><button id="playButton" onclick="play()">Play</button></div><br><br>
+
+		<table id="board">
+			<tr>
+				<td style="border-top:0;border-left:0"><div id="top-left" class="click"></div></td>
+				<td style="border-top:0"><div id="top-middle" class="click"></div></td>
+				<td style="border-top:0;border-right:0"><div id="top-right" class="click"></div></td>
+			</tr>
+			<tr>
+				<td style="border-left:0"><div id="middle-left" class="click"></div></td>
+				<td><div id="middle-middle" class="click"></div></td>
+				<td style="border-right:0"><div id="middle-right" class="click"></div></td>
+			</tr>
+			<tr>
+				<td style="border-bottom:0;border-left:0"><div id="bottom-left" class="click"></div></td>
+				<td style="border-bottom:0"><div id="bottom-middle" class="click"></div></td>
+				<td style="border-bottom:0;border-right:0"><div id="bottom-right" class="click"></div></td>
+			</tr>
+		</table>
+
+		<h1 id="winner"></h1>
+
+		<script src="XO.js"></script>
+	</body>
+</html>
